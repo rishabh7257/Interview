@@ -1,0 +1,55 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class TheWordBreaker {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Set<String> dict = new HashSet<String>();
+		dict.add("I");
+		dict.add("have");
+		dict.add("Sanghvi");
+		dict.add("Rishabh");
+		dict.add("am");
+		dict.add("amm");
+		dict.add("this");
+		dict.add("dog");
+		String input = "IammRishabhSanghvi";
+		
+		TheWordBreaker obj = new TheWordBreaker();
+		obj.wordBreaker(dict,input);
+		System.out.println(" " + obj.wordBreaker(dict,input));
+		
+	}
+
+	boolean wordBreaker(Set<String> dict, String input) {
+		
+		return helper(dict, input);
+		
+	}
+	
+	boolean helper(Set<String> dict, String input) {
+		
+		if (input.length() == 0) {
+			return true;
+		}
+		
+		String stringTest = "";
+		int start = 0;
+		
+		while (start < input.length()){
+			
+			stringTest = stringTest + input.charAt(start);
+			
+			if (dict.contains(stringTest)) {
+				if (helper(dict, input.substring(start+1))) {
+					return true;
+				}
+			}
+			start++;
+		}
+		
+		return false;
+	}
+}
