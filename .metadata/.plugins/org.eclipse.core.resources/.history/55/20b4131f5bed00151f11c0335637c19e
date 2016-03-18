@@ -15,7 +15,7 @@ public class TheWordBreaker {
 		dict.add("amm");
 		dict.add("this");
 		dict.add("dog");
-		String input = "I";
+		String input = "";
 		
 		TheWordBreaker obj = new TheWordBreaker();
 		obj.wordBreaker(dict,input);

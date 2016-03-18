@@ -15,7 +15,7 @@ public class TheWordBreaker {
 		dict.add("amm");
 		dict.add("this");
 		dict.add("dog");
-		String input = "I";
+		String input = "IammRishabhSanghvi";
 		
 		TheWordBreaker obj = new TheWordBreaker();
 		obj.wordBreaker(dict,input);
@@ -24,6 +24,12 @@ public class TheWordBreaker {
 	}
 
 	boolean wordBreaker(Set<String> dict, String input) {
+		
+		return helper(dict, input);
+		
+	}
+	
+	boolean helper(Set<String> dict, String input) {
 		
 		if (input.length() == 0) {
 			return true;
@@ -37,7 +43,7 @@ public class TheWordBreaker {
 			stringTest = stringTest + input.charAt(start);
 			
 			if (dict.contains(stringTest)) {
-				if (wordBreaker(dict, input.substring(start+1))) {
+				if (helper(dict, input.substring(start+1))) {
 					return true;
 				}
 			}
