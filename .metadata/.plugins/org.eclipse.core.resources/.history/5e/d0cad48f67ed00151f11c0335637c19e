@@ -1,0 +1,42 @@
+
+public class HeightOfNodeInBinaryTree {
+
+	class Node{
+		int data;
+		Node left;
+		Node right;
+			
+		public Node(int data){
+				this.data = data;
+				this.left = null;
+				this.right = null;
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			
+		HeightOfNodeInBinaryTree i  = new HeightOfNodeInBinaryTree();
+		i.prepareTree();
+		
+	}
+	
+	public void prepareTree() {
+		
+		Node root = new Node(5);
+		root.left = new Node(10);
+		root.right = new Node(15);
+		root.left.left = new Node(20);		
+		Node x = new Node(25);
+		root.left.right = x;
+		root.left.right.left = new Node(35);
+		System.out.println("Height of the Node " + x.data + " is : " +  i.getNodeHeight(root,x,1));
+		
+	}
+	public int getNodeHeight(Node root, Node x, int height) {
+		
+		
+	}
+}
+
+
